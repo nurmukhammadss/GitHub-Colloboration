@@ -1,13 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light — Cinematic Virtual Reality</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Space Grotesk', sans-serif; background: #08050d; }
+  .display { font-family: 'Rajdhani', sans-serif; }
+  .glow-ring {
+    background: conic-gradient(from 180deg, rgba(217,70,239,0.0), rgba(217,70,239,0.9), rgba(99,102,241,0.2), rgba(217,70,239,0.0));
+  }
+  .bg-radial-purple {
+    background: radial-gradient(circle at 30% 20%, rgba(147, 51, 234, 0.25), transparent 45%),
+                radial-gradient(circle at 80% 60%, rgba(219, 39, 119, 0.18), transparent 50%),
+                #08050d;
+  }
+  .card-photo-1 {
+    background: linear-gradient(160deg, #0b1024 0%, #2b1450 35%, #7c2d8f 65%, #1a0b2e 100%);
+  }
+  .card-photo-2 {
+    background: linear-gradient(160deg, #0a0f2e 0%, #1c2a6e 40%, #b0398a 75%, #1a0b2e 100%);
+  }
+  .hero-visual-bg {
+    background: linear-gradient(180deg, #e94f6b 0%, #c23b8f 45%, #5a2a8f 100%);
+  }
+  .sparkle {
+    color: #e9d8ff;
+  }
+</style>
 </head>
-<body>
-    
+<body class="bg-radial-purple text-white antialiased min-h-screen overflow-x-hidden">
 
-    
+  <!-- Outer border frame like the mock -->
+  <div class="max-w-[1400px] mx-auto border border-purple-900/30 min-h-screen px-6 md:px-12 lg:px-16 py-8">
+
+    <!-- Nav -->
+    <nav class="flex items-center justify-between py-4">
+      <div class="display text-2xl tracking-[0.15em] font-semibold">LIGHT</div>
+      <ul class="hidden md:flex items-center gap-10 text-sm text-gray-200">
+        <li class="relative text-fuchsia-400 font-medium">
+          Home
+          <span class="absolute -bottom-2 left-0 right-0 mx-auto w-4 h-[2px] bg-fuchsia-400 rounded-full"></span>
+        </li>
+        <li class="hover:text-white transition cursor-pointer">Company</li>
+        <li class="hover:text-white transition cursor-pointer">Features</li>
+      </ul>
+      <button class="bg-fuchsia-600 hover:bg-fuchsia-500 transition text-white text-sm font-medium px-6 py-2.5 rounded-full">
+        Sign Up
+      </button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="grid lg:grid-cols-2 gap-12 items-center mt-10 lg:mt-16">
+      <!-- Left copy -->
+      <div>
+        <h1 class="display font-bold leading-[1.05] text-4xl sm:text-5xl lg:text-[3.4rem]">
+          Let's Explore<br>
+          Three-Dimensional<br>
+          visual
+        </h1>
+        <p class="mt-6 text-gray-400 text-[15px] leading-relaxed max-w-sm">
+          With virtual technology you can see the digital world feel more real and you can play the game with a new style.
+        </p>
+
+        <div class="mt-8 flex items-center gap-8">
+          <button class="bg-fuchsia-600 hover:bg-fuchsia-500 transition text-white text-sm font-semibold px-7 py-3 rounded-full">
+            Get it Now
+          </button>
+          <button class="text-sm font-semibold text-white hover:text-fuchsia-400 transition">
+            Explore Device
+          </button>
+        </div>
+
+        <div class="mt-10 flex items-center gap-3">
+          <div class="flex -space-x-3">
+            <div class="w-9 h-9 rounded-full border-2 border-[#08050d] bg-gradient-to-br from-orange-300 to-pink-400"></div>
+            <div class="w-9 h-9 rounded-full border-2 border-[#08050d] bg-gradient-to-br from-purple-300 to-indigo-400"></div>
+            <div class="w-9 h-9 rounded-full border-2 border-[#08050d] bg-gradient-to-br from-rose-300 to-red-400"></div>
+          </div>
+          <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400 ml-1"></span>
+          <span class="text-sm text-gray-400">400k people online</span>
+        </div>
+      </div>
+
+      <!-- Right visual: ring + card -->
+      <div class="relative flex justify-center lg:justify-end">
+        <!-- sparkle decoration -->
+        <svg class="sparkle absolute -top-4 right-6 md:right-16 w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0 L13.8 9.5 L24 12 L13.8 14.5 L12 24 L10.2 14.5 L0 12 L10.2 9.5 Z" opacity="0.9"/>
+        </svg>
+
+        <div class="relative w-full max-w-[420px] aspect-square rounded-full glow-ring p-[2px]">
+          <div class="w-full h-full rounded-full hero-visual-bg flex flex-col items-center justify-end overflow-hidden relative">
+            <!-- silhouette figure suggestion -->
+            <svg class="absolute top-6 right-6 w-40 h-40 opacity-90" viewBox="0 0 200 200" fill="none">
+              <ellipse cx="100" cy="70" rx="34" ry="40" fill="#0b0f2e"/>
+              <rect x="70" y="55" width="60" height="26" rx="10" fill="#111827"/>
+              <rect x="60" y="90" width="90" height="70" rx="16" fill="#1e1b4b"/>
+            </svg>
+
+            <div class="relative z-10 text-center px-8 pb-10 pt-24 bg-gradient-to-t from-[#3a1d63] via-[#3a1d63]/90 to-transparent w-full">
+              <h3 class="display text-xl font-bold tracking-wide">Cinematic Virtual Reality</h3>
+              <div class="w-14 h-[2px] bg-white/50 mx-auto my-3"></div>
+              <p class="text-xs text-purple-100/80 leading-relaxed max-w-[240px] mx-auto">
+                Let's be the best for more real and effective results and ready to explore the limitless world that we have prepared for you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom section -->
+    <section class="grid lg:grid-cols-[auto_auto_1fr] gap-6 lg:gap-8 items-end mt-20 lg:mt-28">
+      <!-- Photo card 1 -->
+      <div class="card-photo-1 w-full max-w-[260px] aspect-[3/4] rounded-2xl relative overflow-hidden shadow-2xl shadow-purple-900/40"
+           style="clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);">
+        <div class="absolute inset-0 flex items-end p-5">
+          <div class="w-2 h-2 rounded-full bg-fuchsia-400"></div>
+        </div>
+        <svg class="absolute inset-0 m-auto w-2/3 opacity-70" viewBox="0 0 100 100" fill="none">
+          <rect x="20" y="35" width="60" height="20" rx="4" fill="#0b0f2e"/>
+          <rect x="15" y="30" width="15" height="30" rx="6" fill="#111827"/>
+        </svg>
+      </div>
+
+      <!-- Photo card 2 -->
+      <div class="card-photo-2 w-full max-w-[190px] aspect-[3/4] rounded-2xl relative overflow-hidden shadow-2xl shadow-fuchsia-900/40 self-end -ml-4 lg:ml-0"
+           style="clip-path: polygon(0 0, 88% 0, 100% 12%, 100% 100%, 0 100%);">
+        <svg class="absolute inset-0 m-auto w-2/3 opacity-70" viewBox="0 0 100 100" fill="none">
+          <rect x="25" y="30" width="50" height="18" rx="4" fill="#0b0f2e"/>
+        </svg>
+      </div>
+
+      <!-- Text block -->
+      <div class="pb-4 lg:pl-6">
+        <h2 class="display font-bold text-3xl leading-tight">
+          New Experience In<br>Playing Game
+        </h2>
+        <p class="mt-5 text-gray-400 text-[15px] leading-relaxed max-w-md">
+          You can try playing the game with a new style and of course a more real feel, like you are the main character in your game and adventure in this new digital world.
+        </p>
+        <button class="mt-6 bg-fuchsia-600 hover:bg-fuchsia-500 transition text-white text-sm font-semibold px-7 py-3 rounded-full">
+          Get it Now
+        </button>
+      </div>
+    </section>
+
+    <div class="h-10"></div>
+  </div>
+
 </body>
 </html>
