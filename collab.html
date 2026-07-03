@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EhyalLive — Virtual Reality Experiences</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Quicksand', 'sans-serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        ink: '#0a0612',
+                        panel: '#130b21',
+                        panel2: '#1a1030',
+                        iris: '#6f6497',
+                        irisdark: '#584f7d',
+                        violet: '#8b5cf6',
+                        magenta: '#d24ec7',
+                        pink: '#ec5fbf',
+                        muted: '#b3a9c9',
+                    },
+                    boxShadow: {
+                        glow: '0 0 60px -10px rgba(139,92,246,0.45)',
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        body { background-color: #06040c; }
+        /* faint diagonal texture on the outer canvas */
+        .canvas-texture {
+            background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 26px);
+        }
+        /* violet unifier so any photo reads as the same neon world */
+        .neon-tint::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(124,58,237,0.35), rgba(20,8,40,0.15) 45%, rgba(214,78,199,0.30));
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+        .card-fade::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(6,4,12,0.92) 8%, rgba(6,4,12,0.55) 35%, transparent 65%);
+        }
+        input::placeholder { color: #7a7290; }
+    </style>
+</head>
+
+<body class="font-body text-white antialiased">
+    <div class="canvas-texture min-h-screen px-4 py-8 sm:px-8 sm:py-12 flex justify-center">
+        <main class="w-full max-w-4xl bg-ink rounded-[2rem] overflow-hidden ring-1 ring-white/5 shadow-2xl">
+
+            <!-- ================= HERO ================= -->
+            <section class="px-6 pt-8 sm:px-10 sm:pt-10">
+                <div class="relative bg-gradient-to-br from-iris to-irisdark rounded-3xl px-7 py-8 sm:px-10 sm:py-10 overflow-visible">
+                    <div class="flex items-center gap-6">
+                        <h1 class="font-display font-bold text-2xl sm:text-4xl leading-tight tracking-wide flex-1">
+                            Awesome experiences with virtual reality world
+                        </h1>
+                        <!-- video thumbnail -->
+                        <a href="#" class="neon-tint relative shrink-0 w-32 h-20 sm:w-44 sm:h-28 rounded-2xl overflow-hidden ring-1 ring-white/20 shadow-glow group">
+                            <img src="https://picsum.photos/seed/vrhero/400/260" alt="Watch the VR showreel" class="w-full h-full object-cover">
+                            <span class="absolute inset-0 z-10 grid place-items-center">
+                                <span class="w-10 h-10 rounded-full bg-white/85 grid place-items-center transition-transform group-hover:scale-110">
+                                    <svg viewBox="0 0 24 24" class="w-4 h-4 translate-x-[1px] fill-panel"><path d="M8 5v14l11-7z"/></svg>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MIXED REALITY HEADSETS ================= -->
+            <section class="px-6 pt-14 sm:px-10">
+                <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-wide mb-8">Mixed Reality Headsets</h2>
+
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <!-- Metaverse -->
+                    <article class="neon-tint card-fade relative h-56 rounded-2xl overflow-hidden ring-1 ring-white/5">
+                        <img src="https://picsum.photos/seed/metaverse/700/500" alt="" class="w-full h-full object-cover">
+                        <div class="absolute z-10 left-5 bottom-5 right-5">
+                            <h3 class="font-display font-semibold text-lg underline decoration-white/40 underline-offset-4">Metaverse</h3>
+                            <p class="text-sm text-muted mt-1.5 max-w-[80%]">A Network of 3D virtual worlds focused on social connection.</p>
+                        </div>
+                    </article>
+
+                    <!-- AIoT -->
+                    <article class="neon-tint card-fade relative h-56 rounded-2xl overflow-hidden ring-1 ring-white/5">
+                        <img src="https://picsum.photos/seed/aiot/700/500" alt="" class="w-full h-full object-cover">
+                        <div class="absolute z-10 left-5 bottom-5 right-5">
+                            <h3 class="font-display font-semibold text-lg underline decoration-white/40 underline-offset-4">AIoT</h3>
+                            <p class="text-sm text-muted mt-1.5 max-w-[85%]">AI and IoT are both emerging innovative technologies with a lot of potentials.</p>
+                        </div>
+                    </article>
+
+                    <!-- HoloLens -->
+                    <article class="neon-tint card-fade relative h-56 rounded-2xl overflow-hidden ring-1 ring-white/5">
+                        <img src="https://picsum.photos/seed/hololens/700/500" alt="" class="w-full h-full object-cover">
+                        <div class="absolute z-10 left-5 bottom-5 right-5">
+                            <h3 class="font-display font-semibold text-lg underline decoration-white/40 underline-offset-4">HoloLens</h3>
+                            <p class="text-sm text-muted mt-1.5">HoloLens display information, blend with the real world, or even simulate a virtual world.</p>
+                        </div>
+                    </article>
+
+                    <!-- TPCASTT -->
+                    <article class="neon-tint card-fade relative h-56 rounded-2xl overflow-hidden ring-1 ring-white/5">
+                        <img src="https://picsum.photos/seed/tpcastt/700/500" alt="" class="w-full h-full object-cover">
+                        <div class="absolute z-10 left-5 bottom-5 right-5">
+                            <h3 class="font-display font-semibold text-lg underline decoration-white/40 underline-offset-4">TPCASTT</h3>
+                            <p class="text-sm text-muted mt-1.5">Method is great to start students reading and inferring with little assistance from the instructor.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ================= TESTIMONIALS ================= -->
+            <section class="px-6 pt-16 sm:px-10">
+                <div class="bg-gradient-to-b from-panel2 to-panel rounded-3xl px-6 py-12 sm:px-12 ring-1 ring-white/5">
+                    <h2 class="font-display font-bold text-2xl sm:text-4xl tracking-wide text-center">What our clients say</h2>
+                    <p class="text-center text-sm text-muted max-w-md mx-auto mt-4">
+                        See what our customer say about us. It really matter for us. How good or bad we will make ir for evaluation to make EhyalLive better.
+                    </p>
+
+                    <div class="grid sm:grid-cols-3 gap-4 mt-10">
+                        <!-- card template -->
+                        <figure class="bg-white/5 rounded-2xl p-5 ring-1 ring-white/5">
+                            <div class="text-magenta text-xs tracking-widest mb-3">★★★★★</div>
+                            <blockquote class="text-[13px] leading-relaxed text-muted">
+                                "I know in real-time where the money is spent, and I don't have to lend out the company's credit card anymore. What a relief!"
+                            </blockquote>
+                            <figcaption class="flex items-center gap-3 mt-5">
+                                <img src="https://i.pravatar.cc/64?img=11" alt="" class="w-9 h-9 rounded-full object-cover ring-1 ring-white/20">
+                                <div class="text-xs">
+                                    <div class="font-medium text-white">Denny Hilguston</div>
+                                    <div class="text-muted">@denny.hill</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="bg-white/5 rounded-2xl p-5 ring-1 ring-white/5">
+                            <div class="text-magenta text-xs tracking-widest mb-3">★★★★★</div>
+                            <blockquote class="text-[13px] leading-relaxed text-muted">
+                                "VISUALS are much better. The improvements in optics and resolution and much more than a modern console generation leap."
+                            </blockquote>
+                            <figcaption class="flex items-center gap-3 mt-5">
+                                <img src="https://i.pravatar.cc/64?img=32" alt="" class="w-9 h-9 rounded-full object-cover ring-1 ring-white/20">
+                                <div class="text-xs">
+                                    <div class="font-medium text-white">Vani Pandey</div>
+                                    <div class="text-muted">@vani.pandey</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="bg-white/5 rounded-2xl p-5 ring-1 ring-white/5">
+                            <div class="text-magenta text-xs tracking-widest mb-3">★★★★★</div>
+                            <blockquote class="text-[13px] leading-relaxed text-muted">
+                                "I can actually see the improvement in the graphics, not having the external sensors is a big plus."
+                            </blockquote>
+                            <figcaption class="flex items-center gap-3 mt-5">
+                                <img src="https://i.pravatar.cc/64?img=45" alt="" class="w-9 h-9 rounded-full object-cover ring-1 ring-white/20">
+                                <div class="text-xs">
+                                    <div class="font-medium text-white">milly Singh</div>
+                                    <div class="text-muted">@milly.singh</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= COMPANY VALUES ================= -->
+            <section class="px-6 pt-20 sm:px-10">
+                <div class="grid sm:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <h2 class="font-display font-bold text-2xl sm:text-4xl tracking-wide leading-tight">
+                            Our company values culture <span class="align-middle">🎨</span>
+                        </h2>
+                        <p class="text-muted mt-6 max-w-sm leading-relaxed">
+                            We specialize in creating visual identities for products and branda in your company.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-white/5 ring-1 ring-white/10 grid place-items-center text-3xl">✌️</div>
+                            <div class="mt-3 text-sm font-medium">Be Sincere</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-white/5 ring-1 ring-white/10 grid place-items-center text-3xl">🤝</div>
+                            <div class="mt-3 text-sm font-medium">Stronger together</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-white/5 ring-1 ring-white/10 grid place-items-center text-3xl">✅</div>
+                            <div class="mt-3 text-sm font-medium">Keep it simple</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-white/5 ring-1 ring-white/10 grid place-items-center text-3xl">💡</div>
+                            <div class="mt-3 text-sm font-medium">Take intelligent risks</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= CTA ================= -->
+            <section class="px-6 py-20 sm:px-10">
+                <div class="neon-tint relative rounded-3xl overflow-hidden ring-1 ring-white/5 min-h-[15rem]">
+                    <img src="https://picsum.photos/seed/vrhands/900/400" alt="" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-panel via-panel/90 to-transparent"></div>
+
+                    <div class="relative z-10 px-8 py-10 sm:px-12 max-w-md">
+                        <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-wide leading-tight">
+                            Explore product in new way <span class="text-magenta">➤</span>
+                        </h2>
+                        <p class="text-sm text-muted mt-4 max-w-xs leading-relaxed">
+                            We specialize in creating visual identities for products and branda in your company.
+                        </p>
+
+                        <form class="flex items-center gap-3 mt-7" onsubmit="return false">
+                            <input type="email" placeholder="Your Email"
+                                class="flex-1 bg-white/5 ring-1 ring-white/15 rounded-xl px-4 py-2.5 text-sm outline-none focus:ring-violet transition">
+                            <button type="submit"
+                                class="bg-gradient-to-r from-magenta to-pink rounded-xl px-5 py-2.5 text-sm font-medium whitespace-nowrap hover:brightness-110 transition shadow-glow">
+                                Start ↗
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>
